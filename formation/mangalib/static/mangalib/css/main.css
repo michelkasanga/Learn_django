@@ -1,7 +1,37 @@
-body{
-    background: #eee;
-    color:rgb(0, 140, 255) ;
-    margin: auto;
-    width: 900px;
-    justify-content: center;
-}
+ body {
+     background-color: #111;
+     /* fond noir */
+     color: white;
+     /* texte blanc par défaut */
+     margin: 0;
+     font-family: Arial, sans-serif;
+ }
+
+ h1 {
+     text-align: center;
+     color: red;
+     font-size: 3em;
+     font-weight: bold;
+     margin-top: 50px;
+ }
+
+ p{
+     margin-left: 20px;
+     font-size: 1.2em;
+     color: aliceblue;
+     
+ }
+  a{
+     margin-left: 20px;
+     font-size: 1.2em;
+     color: aliceblue;
+     
+ }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        margin: 10px 0;
+        color: aliceblue;
+    }
