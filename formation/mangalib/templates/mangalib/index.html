@@ -1,0 +1,28 @@
+{% load static %} {% comment "" %} pour utiliser les fichier static {% endcomment %} 
+{% load customtags%} {% comment "" %} pour utiliser nos filtres et balises{% endcomment %}
+<!DOCTYPE html > 
+<html lang= "fr">  
+    <head>
+        <meta charset= "utf-8">
+         <title> Mes Mangas</title>
+        
+         <link rel="stylesheet" href="{% static "global.css" %}">
+         <link rel="stylesheet" href="{% static "mangalib/css/main.css" %}">
+
+    </head>
+    <body>
+         <h1> Bienvenu Mangas</h1>
+         <p> {{message|lenghtis:5}}</p>
+         <p>
+
+         {% test_code username %}
+       
+
+        
+            <p> {{userList|truncatewords:5}}</p>
+           
+
+
+       
+    </body>
+</html>

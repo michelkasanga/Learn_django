@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProduitConfig(AppConfig):
+class MangalibConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'produit'
+    name = 'mangalib'
