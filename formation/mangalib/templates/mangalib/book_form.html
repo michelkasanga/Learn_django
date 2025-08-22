@@ -1,0 +1,16 @@
+{% include "mangalib/include/head.html" %}
+    <h1> {{nom}} d'un Livre!</h1>
+   
+    <form method = "post">
+      {% csrf_token %}
+      {{form.as_p}}
+
+       <button type="submit"> Ajouter </button >
+   
+    </form >
+   
+
+    </br>
+ 
+{% include "mangalib/include/foot.html" %}
+

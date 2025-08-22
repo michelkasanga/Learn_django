@@ -1,0 +1,23 @@
+{% include "mangalib/include/head.html" %}
+
+{% for message in messages  %}
+<p> {{message}} </p>
+{% endfor %}
+
+Connection
+
+<form method = "post">
+      {% csrf_token %}
+      {{form.as_p}}
+
+       <button type="submit"> Connection </button >
+   
+</form >
+   
+
+    </br>
+    
+<p><a href="{% url 'accounts:register_user' %}">S'inscrire</a></p>
+ 
+{% include "mangalib/include/foot.html" %}
+

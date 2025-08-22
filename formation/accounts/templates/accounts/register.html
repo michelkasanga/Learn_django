@@ -1,0 +1,105 @@
+{% include "mangalib/include/head.html" %}
+
+
+S'inscrire
+
+<form method = "post">
+      {% csrf_token %}
+      {{form.as_p}}
+
+       <button type="submit"> Enregistrer</button >
+   
+</form >
+    </br>
+<p><a href="{% url 'accounts:login_user' %}">se connecter</a></p> 
+   
+
+<style>
+    form {
+        width: 300px;
+        margin: 100px auto;
+    }
+    button {
+        display: block;
+        margin-top: 10px;
+    } 
+
+    p {
+        text-align: center;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: block;
+        color: #666;
+        font-size: 0.8em;
+        margin-top: 2px;
+        text-align: center;
+
+    }
+    ul li {
+        display: block;
+        color: #666;
+        font-size: 0.8em;
+        margin-top: 2px;
+        text-align: center;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+
+    .helptext {
+        display: block;
+        color: #666;
+        font-size: 0.8em;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .errorlist {
+        display: block;
+        color: #f70000ff;
+        font-size: 0.8em;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+
+   
+
+    .helptext ul li {
+        display: block;
+        color: #666;
+        font-size: 0.8em;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+     .helptext li {
+        list-style: none;
+    }
+    .helptext ul {
+        padding: 0;
+        margin: 0;
+    }
+   
+
+    .errorlist li {
+        display: block;
+        color: #f80000ff;
+        font-size: 0.8em;
+        margin-top: 5px;
+        text-align: center;
+    }
+
+     .errorlist li {
+        list-style: none;
+    }
+
+   
+</style>
+
+
+{% include "mangalib/include/foot.html" %}
+

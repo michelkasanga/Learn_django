@@ -1,21 +1,37 @@
-{% load static %} {% comment "" %} pour utiliser les fichier static {% endcomment %} 
-{% load customtags%} {% comment "" %} pour utiliser nos filtres et balises{% endcomment %}
-<!DOCTYPE html > 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MangaLib</title>
-    <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
-</head>
-<body>
+{% include "mangalib/include/head.html" %}
+
+{% if user.is_authenticated %}
+    <p>{{user.username}} | <a  href=" {% url "accounts:logout_user" %}"> Deconnection</a></p>    
+{% else %}  
+<p><a  href=" {% url "accounts:login_user" %}"> Connection</a></p>
+<p><a  href=" {% url "accounts:register_user" %}"> Inscription</a></p>
+{% endif %}
+
     <h1>Bienvenue sur MangaLib !</h1>
-     <ul> 
-        {% for book in books  %}
-        <li><a href=" {% url "mangalib:show" book.id %}"> {{ book.title }} </a></li>
-        {% endfor %}
-    </ul> 
+  
+            <p><a  href=" {% url "mangalib:add" %}">+ AJOUTER LIVRE</a></p>
     
-</body>
-</html>
+      <table>
+          <tr>
+            <th >NOM</th>
+            <th >AUTEUR</th>
+            <th >QTÉ</th>
+            <th colspan="2">ACTIONS</th>
+          </tr>
+          
+          {% for book  in books  %}
+          <tr>
+            <td ><a  href=" {% url "mangalib:show" book.id %}"> {{book.title}} </a></td>
+            <td >{{book.author}} </td>
+            <td > {{book.quantity}}</td>
+            <td ><a  href="{% url "mangalib:edit" book.id %}" class="in"> 🖍 </a> </td>
+             <td ><a  href="{% url "mangalib:remove"  book.id %}" class="x"> ✖  </a></td>
+          </tr>
+          {% endfor %}
+
+      </table>
+
+    </br>
+ 
+{% include "mangalib/include/foot.html" %}
+

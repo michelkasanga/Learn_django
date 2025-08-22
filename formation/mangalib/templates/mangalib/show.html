@@ -1,20 +1,8 @@
+{% include "mangalib/include/head.html" %}
 
-{% load static %} {% comment "" %} pour utiliser les fichier static {% endcomment %} 
-{% load customtags%} {% comment "" %} pour utiliser nos filtres et balises{% endcomment %}
-<!DOCTYPE html > 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ book.title }} </title>
-    <link rel="stylesheet" href="{% static 'mangalib/css/main.css' %}">
-   
-</head>
-<body>
     <h1> {{ book.title }} </h1>
     <p> Quantity{{ book.quantity }} </p>
     <p> Auteur: {{ book.author.name }} </p>
     <a href=" {% url "mangalib:index" %}"> &laquo; Revenir à la liste </a>
-</body>
-</html>
+
+    {% include "mangalib/include/foot.html" %}
